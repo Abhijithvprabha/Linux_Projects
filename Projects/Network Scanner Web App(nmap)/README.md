@@ -32,23 +32,19 @@ To get started, make sure you have the following tools installed:
     sudo systemctl enable apache2
     ```
 
-# Network Scan Directory Setup
-
-## Setup Directory and Permissions
-
 ### Create the Directory for Storing Network Scan Results
 
-# Configure Ownership and Permissions (This is a Bad Idea)
+### Configure Ownership and Permissions 
 
-sudo chown ubuntu /var/www/html
+sudo chown ubuntu /var/www/html/admin
 
-sudo chmod 777 /var/www/html
+sudo chmod 777 /var/www/html/admin
 
 # Cron Job Configuration
 
 sudo crontab -e
 
-*/10 * * * * nmap 192.168.1.0/24 -oN /var/www/html/nmap.html
+*/10 * * * * nmap 192.168.1.0/24 -oN /var/www/html/admin/nmap.html
 
 # PHP Script: `network.php`
 
@@ -63,17 +59,16 @@ echo "Server Timestamp: ";
 echo date("h:i:sa");
 
 echo "<pre>";
-include("/var/www/html/nmap.html");
+include("/var/www/html/admin/nmap.html");
 echo "</pre>";
 
 ?>
 
 ```
 
-Onces the nmpa fired, you can check the ipaddress/network.php and you will see the results of the scan 
+Once the `nmap` scan is complete, you can check the `ipaddress/network.php`, and you will see the results of the scan.
 
 ![alt text](scan_Resultd.png)
-
 
 # Security Hardening / Protect the Apache with Basic Authentication
 
@@ -84,7 +79,9 @@ This guide will help you secure your Apache web server using Basic Authenticatio
 If `apache2-utils` is not already installed on your server, use the following command to install it. This package provides the utilities required for managing passwords.
 
 ```bash
+
 sudo apt-get install apache2-utils
+
 ```
 ## Step 2: Create a `.htpasswd` File
 
