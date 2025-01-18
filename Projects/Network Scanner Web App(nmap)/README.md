@@ -75,6 +75,30 @@ Onces the nmpa fired, you can check the ipaddress/network.php and you will see t
 ![alt text](scan_Resultd.png)
 
 
+# Security Hardening / Protect the Apache with Basic Authentication
+
+This guide will help you secure your Apache web server using Basic Authentication.
+
+## Step 1: Install `apache2-utils`
+
+If `apache2-utils` is not already installed on your server, use the following command to install it. This package provides the utilities required for managing passwords.
+
+```bash
+sudo apt-get install apache2-utils
+```
+## Step 2: Create a `.htpasswd` File
+
+Next, you need to create a `.htpasswd` file, which will store the usernames and passwords for Basic Authentication. Use the `htpasswd` command to generate the file and add a username.
+
+```bash
+sudo htpasswd -c /etc/apache2/.htpasswd username
+```
+Replace `username` with the desired username. The `-c` option creates the `.htpasswd` file. Be careful—if you add more users later, omit the `-c` flag to avoid overwriting the file.
+
+You will be prompted to enter and confirm a password for the new user.
+
+![alt text](<adminlogin portal .png>)
+
 Thank you 
 
 
