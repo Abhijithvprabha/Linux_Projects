@@ -18,6 +18,14 @@ To get started, make sure you have the following tools installed:
 
 ### Install Dependencies
 
-1. **Install Apache2**:
+1. **Install Apache2, namp, php**:
    ```bash
    sudo apt-get install apache2
+   sudo apt-get install php
+   sudo apt-get install nmap
+   
+ Ensure Apache2 is running: After installing Apache, make sure it's running:
+
+``` bash
+    sudo systemctl start apache2
+    sudo systemctl enable apache2
