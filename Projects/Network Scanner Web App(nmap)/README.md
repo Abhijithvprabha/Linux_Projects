@@ -63,11 +63,20 @@ echo "Server Timestamp: ";
 echo date("h:i:sa");
 
 echo "<pre>";
-include("nmap.html");
+include("/var/www/html/nmap.html");
 echo "</pre>";
 
 ?>
 
 ```
+
+Onces the nmpa fired, you can check the ipaddress/network.php and you will see the results of the scan 
+
+![alt text](scan_Resultd.jpg)
+
+
+Thank you 
+
+
 
 
