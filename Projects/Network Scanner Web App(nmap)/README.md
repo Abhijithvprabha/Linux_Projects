@@ -92,6 +92,17 @@ sudo htpasswd -c /etc/apache2/.htpasswd username
 ```
 Replace `username` with the desired username. The `-c` option creates the `.htpasswd` file. Be careful—if you add more users later, omit the `-c` flag to avoid overwriting the file.
 
+edit the /vim /etc/apache2/sites-available/000-default.conf
+
+Make sure you select the proper directory and file based on your needs. 
+
+Here, I am going to set `nmap.php` as my default file when the IP address is loaded via a web browser.
+
+
+![alt text](<directory _sitesavailable.png>)
+
+
+
 You will be prompted to enter and confirm a password for the new user.
 
 ![alt text](<adminlogin portal .png>)
