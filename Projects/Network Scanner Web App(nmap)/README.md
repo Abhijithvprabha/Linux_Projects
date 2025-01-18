@@ -38,18 +38,36 @@ To get started, make sure you have the following tools installed:
 
 ### Create the Directory for Storing Network Scan Results
 
-Run the following command to create the directory where `nmap` will save its output:
+# Configure Ownership and Permissions (This is a Bad Idea)
 
-```bash
-sudo mkdir -p /var/www/html/network_scan
+sudo chown ubuntu /var/www/html
+
+sudo chmod 777 /var/www/html
+
+# Cron Job Configuration
+
+sudo crontab -e
+
+*/10 * * * * nmap 192.168.1.0/24 -oN /var/www/html/nmap.html
+
+# PHP Script: `network.php`
+
+This PHP script displays the server's current timestamp and includes the content of the `nmap.html` file, preserving its formatting.
+
+### PHP Code:
+
+```php
+<?php
+
+echo "Server Timestamp: ";
+echo date("h:i:sa");
+
+echo "<pre>";
+include("nmap.html");
+echo "</pre>";
+
+?>
 
 ```
 
-### Set the Appropriate Permissions
 
-** Change the ownership of the directory to the web server's user (e.g., `www-data`), so the web server can access the directory:**
-
-```bash
-sudo chown www-data:www-data /var/www/html/network_scan
-
-```
