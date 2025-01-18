@@ -29,3 +29,44 @@ To get started, make sure you have the following tools installed:
 ``` bash
     sudo systemctl start apache2
     sudo systemctl enable apache2
+
+# Network Scan Directory Setup
+
+## Setup Directory and Permissions
+
+###  Create the Directory for Storing Network Scan Results
+
+Run the following command to create the directory where `nmap` will save its output:
+
+
+sudo mkdir -p /var/www/html/network_scan
+2. Set the Appropriate Permissions
+Change the ownership of the directory to the web server's user (e.g., www-data), so the web server can access the directory:
+
+
+sudo chown www-data:www-data /var/www/html/network_scan
+Set the permissions so that the web server has read and execute access to the directory:
+
+
+sudo chmod 755 /var/www/html/network_scan
+
+Ensure the Web Server User Can Write to the Directory
+If you're using a non-default web server user or need the directory to be writable by the script, set the appropriate permissions as needed. For example, if you want to allow the web server user to write to the directory, you can adjust the permissions like this:
+
+
+sudo chmod 775 /var/www/html/network_scan
+
+This will grant write access to the web server's user and group.
+
+Notes
+
+Ensure that your web server is running as the user you set in the permissions (e.g., www-data).
+
+If using a script that runs nmap, make sure it has the appropriate permissions to write to the directory.
+
+Adjust directory permissions based on your security requirements.
+Troubleshooting
+If you encounter permission issues, verify the ownership and permissions of the directory using the following commands:
+
+ls -ld /var/www/html/network_scan
+This will show the current permissions and owner of the directory, allowing you to diagnose and fix any issues.
