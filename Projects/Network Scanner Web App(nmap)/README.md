@@ -26,7 +26,6 @@ To get started, make sure you have the following tools installed:
    
  Ensure Apache2 is running: After installing Apache, make sure it's running:
 
-``` bash
     sudo systemctl start apache2
     sudo systemctl enable apache2
 
