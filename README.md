@@ -13,12 +13,3 @@ This repository contains various hands-on projects designed for system administr
 - **Backup and Restore**: Implement backup strategies using tools like rsync, cron jobs, and cloud storage.
 - **Security Best Practices**: Hardening Linux servers with security updates, firewalls, SELinux, and audit tools.
 
-## Requirements:
-- A Linux system or VM (e.g., Ubuntu, CentOS, Debian).
-- Basic understanding of Linux commands and terminal usage.
-- Tools like `bash`, `cron`, `systemctl`, `firewalld`, `ufw`, etc.
-
-## Getting Started:
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/Linux_Projects_for_sysadmin.git
