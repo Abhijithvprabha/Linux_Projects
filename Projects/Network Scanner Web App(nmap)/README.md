@@ -72,7 +72,7 @@ echo "</pre>";
 
 Onces the nmpa fired, you can check the ipaddress/network.php and you will see the results of the scan 
 
-Projects/Network Scanner Web App(nmap)/scan_Resultd.png
+![alt text](scan_Resultd.png)
 
 
 Thank you 
